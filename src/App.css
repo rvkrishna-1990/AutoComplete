@@ -16,3 +16,8 @@
   text-align: left;
   margin-left: 5px;
 }
+.list-item:hover {
+  background-color: beige;
+  margin-left: 3px;
+  cursor: pointer;
+}

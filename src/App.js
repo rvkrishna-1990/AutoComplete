@@ -14,7 +14,14 @@ function App() {
     }
   }
   useEffect(()=>{
-    fetchData();
+    const timer = setTimeout(() => {
+      fetchData();
+    }, 400);
+    // return statement must and should to clear timer and it is called debouncing
+    // when useeffect returns something that will execute after demounting that componenet
+    return ()=>{
+      clearTimeout(timer);
+    } 
   },[input])
   return (
     <div className="App">
@@ -30,8 +37,13 @@ function App() {
       </input>
       {
         showResults && <div className='result-container'>
-        {results.map((r) => <span className='list-item' key={r.id}>{r.name}</span>)}
-      </div>
+          {results.map((r) => <span className='list-item'
+            onSelect={(e) => setInput(e.target.value)}
+            key={r.id}>
+            {r.name}
+          </span>)
+          }
+        </div>
       }
     </div>
   );
