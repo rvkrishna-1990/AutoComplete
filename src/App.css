@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+.inputBox{
+  width: 300px;
+}
+.result-container{
+  width: 300px;
+  margin: auto;
+  max-height: 250px;
+  border: 1px gray solid;
+  overflow-y: scroll;
+}
+.list-item{
+  display: block;
+  text-align: left;
+  margin-left: 5px;
+}
